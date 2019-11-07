@@ -52,7 +52,7 @@ else {
 function getDurationFromMinutes(minutes) {
   var hours = Math.floor(minutes / 60); 
   var minutes = minutes % 60;
-  return `${hours} hr, ${minutes}`;
+  return `${hours} hr, ${minutes} min`;
 }
 
 getDurationFromMinutes(160);  // 2 hr, 40 min
