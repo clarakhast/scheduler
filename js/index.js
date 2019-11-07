@@ -22,7 +22,7 @@ document.getElementById(`code`).innerHTML = course.code;
 document.getElementById(`instructor`).innerHTML = course.instructor;
 document.getElementById(`start`).innerHTML = `${course.start.term}` + ` ` + `${course.start. year}`;
 document.getElementById(`weeks`).innerHTML = course.weeks;
-document.getElementById(`breaks`).innerHTML = course.breaks;
+// document.getElementById(`breaks`).innerHTML = course.breaks;
 document.getElementById(`duration`).innerHTML = getDurationFromMinutes(course.duration);
 
 /*
@@ -39,6 +39,14 @@ LAB:
             - Always round up:    Math.ceil(1.001)
             - Always round down:  Math.floor(1.999)
 */
+
+if (course.breaks === true) {
+  document.getElementById(`breaks`).innerHTML = `Yes`;
+}
+
+else {
+  document.getElementById(`breaks`).innerHTML = `No`;
+}
 
 
 function getDurationFromMinutes(minutes) {
