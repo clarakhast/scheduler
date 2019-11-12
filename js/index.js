@@ -35,23 +35,24 @@ const allCourses = [
 
 
 function getCourseAsHtmlString(course){
-  document.getElementById(`courses`).innerHTML = 
-  `<h3 id="name">${course.name}</h3>
+   
+  return `<h3 id="name">${course.name}</h3>
   <ul>
-    <li>Course Code: <strong id="code">${course.code}</strong></li>
-    <li>Instructor: <strong id="instructor">${course.instructor}</strong></li>
-    <li>Start: <strong id="start">${course.start.term} ${course.start. year}</strong></li>
+    <li>Course Code: <strong>${course.code}</strong></li>
+    <li>Instructor: <strong>${course.instructor}</strong></li>
+    <li>Start: <strong>${course.start.term} ${course.start. year}</strong></li>
     <li>
-      Weeks: <strong id="weeks">${course.weeks}</strong>
+      Weeks: <strong>${course.weeks}</strong>
       <ul>
-        <li>Includes Break: <strong id="breaks">${course.breaks}</strong></li>
+        <li>Includes Break: <strong>${course.breaks}</strong></li>
       </ul>
     </li>
-    <li>Duration: <strong id="duration">${getDurationFromMinutes(course.duration)}</strong></li>
+    <li>Duration: <strong>${getDurationFromMinutes(course.duration)}</strong></li>
   </ul>`;
 }
 
-getCourseAsHtmlString(allCourses[0]);
+document.getElementById(`courses`).innerHTML += getCourseAsHtmlString(allCourses[0]);
+document.getElementById(`courses`).innerHTML += getCourseAsHtmlString(allCourses[1]);
 
 function getDurationFromMinutes(minutes) {
   var hours = Math.floor(minutes / 60); 
