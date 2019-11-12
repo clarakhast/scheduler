@@ -20,20 +20,6 @@ const allCourses = [
   }
 ];
 
-
-// function setCourseHtml(course) {
-//   document.getElementById(`name`).innerHTML = course.name;
-//   document.getElementById(`code`).innerHTML = course.code;
-//   document.getElementById(`instructor`).innerHTML = course.instructor;
-//   document.getElementById(`start`).innerHTML = `${course.start.term} ${course.start. year}`;
-//   document.getElementById(`weeks`).innerHTML = course.weeks;
-//   document.getElementById(`breaks`).innerHTML = course.breaks;
-//   document.getElementById(`duration`).innerHTML = getDurationFromMinutes(course.duration);
-// }
-
-// setCourseHtml(allCourses[0]);
-
-
 function getCourseAsHtmlString(course){
    
   return `<h3 id="name">${course.name}</h3>
@@ -48,7 +34,8 @@ function getCourseAsHtmlString(course){
       </ul>
     </li>
     <li>Duration: <strong>${getDurationFromMinutes(course.duration)}</strong></li>
-  </ul>`;
+  </ul>
+  `;
 }
 
 document.getElementById(`courses`).innerHTML += getCourseAsHtmlString(allCourses[0]);
