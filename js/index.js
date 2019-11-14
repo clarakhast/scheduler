@@ -18,6 +18,15 @@ const allCourses = [
     weeks: 15,
     breaks: true,
     duration: 160
+  },
+  {
+    name: `Planning and Prototyping`,
+    code: `WDDM-117`,
+    instructor: `Cory Coletta`,
+    start: { term: `Fall`, year: 2019 },
+    weeks: 15,
+    breaks: `Yes`,
+    duration: 160
   }
 ];
 
@@ -66,5 +75,5 @@ const arrCourses = allCourses.map(getCourseAsHtmlString);
 const strCourses = arrCourses.join(`\n`);
 // Assign the String to the document
 const objCourses = document.getElementById(`courses`);
-// Test by adding a new Object to allCourses
 objCourses.innerHTML = strCourses;
+// Test by adding a new Object to allCourses
