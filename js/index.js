@@ -25,7 +25,7 @@ const allCourses = [
     instructor: `Cory Coletta`,
     start: { term: `Fall`, year: 2019 },
     weeks: 15,
-    breaks: `Yes`,
+    breaks: true,
     duration: 160
   }
 ];
