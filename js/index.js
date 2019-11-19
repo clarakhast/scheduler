@@ -3,6 +3,22 @@
 
 const allCourses = [
   {
+    name: `Applied Web Development`,
+    code: `WDDM-113`,
+    instructor: `Rocco Panacci`,
+    start: { term: `Fall`, year: 2019 },
+    weeks: 15,
+    breaks: true,
+    duration: 160
+  },{
+    name: `Applied Web Design`,
+    code: `WDDM-114`,
+    instructor: `Rocco Panacci`,
+    start: { term: `Fall`, year: 2019 },
+    weeks: 15,
+    breaks: true,
+    duration: 160
+  },{
     name: `Tools and Workflow`,
     code: `WDDM-115`,
     instructor: `Kadeem Best`,
@@ -11,15 +27,14 @@ const allCourses = [
     breaks: true,
     duration: 160
   },{
-    name: `Applied Web Development`,
-    code: `WDDM-113`,
-    instructor: `Rocco Panacci`,
+    name: `Production Technique`,
+    code: `WDDM-116`,
+    instructor: `Milorad Eftoski`,
     start: { term: `Fall`, year: 2019 },
     weeks: 15,
     breaks: true,
     duration: 160
-  },
-  {
+  },{
     name: `Planning and Prototyping`,
     code: `WDDM-117`,
     instructor: `Cory Coletta`,
@@ -68,12 +83,22 @@ function getCourseAsHtmlString(course) {
 /************* EXECUTABLE *************/
 // Execute functions that will access data
 
+
 // LAB:
-// map() the Array to a new array of Strings (formatted as HTML)
-const arrCourses = allCourses.map(getCourseAsHtmlString);
-// join() the NEW Array to a new String of HTML instructions (<article>)
-const strCourses = arrCourses.join(`\n`);
-// Assign the String to the document
-const objCourses = document.getElementById(`courses`);
-objCourses.innerHTML = strCourses;
-// Test by adding a new Object to allCourses
+// 1. Add a button the document that when clicked, 
+// will load ONLY the first three courses
+// Test by having at least 4 courses
+
+document.getElementById(`filter`).addEventListener(`click`, allCourses.slice(1,4));
+
+
+// 2. Wrap the below functionality in a function
+// that takes the Array to print as a parameter
+// Test by passing "allCourses".
+
+// 3. Wrap the entire execution in an Event handler
+// so that the code only runs when the window
+// has finished loading
+
+document.getElementById('courses').innerHTML = 
+  allCourses.map(getCourseAsHtmlString).join('\n')
